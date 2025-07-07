@@ -22,6 +22,10 @@ const Checkout = () => {
     { id: 4, name: 'Review Order' }
   ];
 
+  const handleBillingAsShippingChange = (checked: boolean | "indeterminate") => {
+    setUseBillingAsShipping(checked === true);
+  };
+
   return (
     <div className="min-h-screen bg-lifecode-primary">
       <Header />
@@ -140,7 +144,7 @@ const Checkout = () => {
                       <Checkbox 
                         id="useBillingAsShipping" 
                         checked={useBillingAsShipping}
-                        onCheckedChange={setUseBillingAsShipping}
+                        onCheckedChange={handleBillingAsShippingChange}
                       />
                       <Label htmlFor="useBillingAsShipping" className="text-lifecode-text-primary">
                         Use Billing Address as Shipping Address
