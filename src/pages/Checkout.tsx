@@ -7,15 +7,17 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useCart } from '@/contexts/CartContext';
 
 const Checkout = () => {
   const { items, getTotalPrice } = useCart();
   const [currentStep, setCurrentStep] = useState(1);
+  const [useBillingAsShipping, setUseBillingAsShipping] = useState(false);
 
   const steps = [
     { id: 1, name: 'Contact Information' },
-    { id: 2, name: 'Shipping Address' },
+    { id: 2, name: 'Billing & Shipping' },
     { id: 3, name: 'Payment Method' },
     { id: 4, name: 'Review Order' }
   ];
@@ -24,7 +26,7 @@ const Checkout = () => {
     <div className="min-h-screen bg-lifecode-primary">
       <Header />
       
-      <div className="pt-24 pb-12">
+      <div className="pt-20 pb-12">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <Link 
@@ -100,33 +102,83 @@ const Checkout = () => {
 
                 {currentStep === 2 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-lifecode-text-primary mb-6">Shipping Address</h2>
-                    <div className="space-y-4">
-                      <div>
-                        <Label htmlFor="address" className="text-lifecode-text-primary">Street Address</Label>
-                        <Input id="address" type="text" className="mt-1" />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <h2 className="text-2xl font-bold text-lifecode-text-primary mb-6">Billing & Shipping Address</h2>
+                    
+                    {/* Billing Address */}
+                    <div className="mb-8">
+                      <h3 className="text-lg font-semibold text-lifecode-text-primary mb-4">Billing Address</h3>
+                      <div className="space-y-4">
                         <div>
-                          <Label htmlFor="city" className="text-lifecode-text-primary">City</Label>
-                          <Input id="city" type="text" className="mt-1" />
+                          <Label htmlFor="billingAddress" className="text-lifecode-text-primary">Street Address</Label>
+                          <Input id="billingAddress" type="text" className="mt-1" />
                         </div>
-                        <div>
-                          <Label htmlFor="state" className="text-lifecode-text-primary">State</Label>
-                          <Input id="state" type="text" className="mt-1" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <Label htmlFor="billingCity" className="text-lifecode-text-primary">City</Label>
+                            <Input id="billingCity" type="text" className="mt-1" />
+                          </div>
+                          <div>
+                            <Label htmlFor="billingState" className="text-lifecode-text-primary">State</Label>
+                            <Input id="billingState" type="text" className="mt-1" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <Label htmlFor="pincode" className="text-lifecode-text-primary">PIN Code</Label>
-                          <Input id="pincode" type="text" className="mt-1" />
-                        </div>
-                        <div>
-                          <Label htmlFor="country" className="text-lifecode-text-primary">Country</Label>
-                          <Input id="country" type="text" value="India" className="mt-1" readOnly />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <Label htmlFor="billingPincode" className="text-lifecode-text-primary">PIN Code</Label>
+                            <Input id="billingPincode" type="text" className="mt-1" />
+                          </div>
+                          <div>
+                            <Label htmlFor="billingCountry" className="text-lifecode-text-primary">Country</Label>
+                            <Input id="billingCountry" type="text" value="India" className="mt-1" readOnly />
+                          </div>
                         </div>
                       </div>
                     </div>
+
+                    {/* Use Billing as Shipping Checkbox */}
+                    <div className="flex items-center space-x-2 mb-6">
+                      <Checkbox 
+                        id="useBillingAsShipping" 
+                        checked={useBillingAsShipping}
+                        onCheckedChange={setUseBillingAsShipping}
+                      />
+                      <Label htmlFor="useBillingAsShipping" className="text-lifecode-text-primary">
+                        Use Billing Address as Shipping Address
+                      </Label>
+                    </div>
+
+                    {/* Shipping Address */}
+                    {!useBillingAsShipping && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-lifecode-text-primary mb-4">Shipping Address</h3>
+                        <div className="space-y-4">
+                          <div>
+                            <Label htmlFor="shippingAddress" className="text-lifecode-text-primary">Street Address</Label>
+                            <Input id="shippingAddress" type="text" className="mt-1" />
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                              <Label htmlFor="shippingCity" className="text-lifecode-text-primary">City</Label>
+                              <Input id="shippingCity" type="text" className="mt-1" />
+                            </div>
+                            <div>
+                              <Label htmlFor="shippingState" className="text-lifecode-text-primary">State</Label>
+                              <Input id="shippingState" type="text" className="mt-1" />
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                              <Label htmlFor="shippingPincode" className="text-lifecode-text-primary">PIN Code</Label>
+                              <Input id="shippingPincode" type="text" className="mt-1" />
+                            </div>
+                            <div>
+                              <Label htmlFor="shippingCountry" className="text-lifecode-text-primary">Country</Label>
+                              <Input id="shippingCountry" type="text" value="India" className="mt-1" readOnly />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 

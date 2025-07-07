@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header className="fixed w-full top-0 z-50 glassmorphism">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
@@ -48,22 +48,22 @@ const Header = () => {
                 Genetic Panel <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isGeneticPanelOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 glassmorphism rounded-lg p-4 space-y-2">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-lifecode-primary/95 backdrop-blur-xl border border-white/20 rounded-lg p-4 space-y-2 shadow-2xl">
                   <Link 
                     to="/lifecode-one" 
-                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/5 rounded transition-all"
+                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/10 rounded transition-all"
                   >
                     Lifecode One
                   </Link>
                   <Link 
                     to="/lifecode-essentials" 
-                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/5 rounded transition-all"
+                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/10 rounded transition-all"
                   >
                     Lifecode Essentials
                   </Link>
                   <Link 
                     to="/lifecode-enhanced" 
-                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/5 rounded transition-all"
+                    className="block px-4 py-2 text-lifecode-text-primary hover:text-lifecode-accent hover:bg-white/10 rounded transition-all"
                   >
                     Lifecode Enhanced
                   </Link>

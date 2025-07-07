@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Heart, Activity } from 'lucide-react';
 import Header from '@/components/Header';
@@ -10,17 +9,15 @@ import { toast } from 'sonner';
 const LifecodeOne = () => {
   const { addToCart } = useCart();
 
-  const handleAddAllToCart = () => {
-    panels.forEach(panel => {
-      addToCart({
-        id: panel.id,
-        name: panel.name,
-        price: panel.price,
-        category: 'Lifecode One',
-        description: panel.description
-      });
+  const handleAddCompletePackage = () => {
+    addToCart({
+      id: 'lifecode-one-complete',
+      name: 'Lifecode One Complete Package',
+      price: 35997, // Sum of all three panels (12999 + 12999 + 9999)
+      category: 'Lifecode One',
+      description: 'Complete genetic analysis package including Standard Health Men, Women, and Pediatric panels'
     });
-    toast.success('All Lifecode One panels added to cart!');
+    toast.success('Lifecode One Complete Package added to cart!');
   };
 
   const panels = [
@@ -73,7 +70,7 @@ const LifecodeOne = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 relative">
+      <section className="pt-20 pb-12 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <img 
@@ -88,10 +85,10 @@ const LifecodeOne = () => {
               Comprehensive genetic panels for men, women, and children focusing on core health markers and predispositions
             </p>
             <Button
-              onClick={handleAddAllToCart}
+              onClick={handleAddCompletePackage}
               className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
             >
-              BUY NOW - Complete Package
+              BUY NOW
             </Button>
           </div>
         </div>
