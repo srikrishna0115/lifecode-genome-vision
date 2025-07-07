@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -118,9 +117,9 @@ const LifecodeEssentials = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 relative">
+      <section className="pt-20 pb-8 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto mb-12">
+          <div className="text-center max-w-4xl mx-auto mb-8">
             <h1 className="text-4xl md:text-6xl font-bold text-lifecode-text-primary mb-6 glow-text">
               Lifecode Essentials
             </h1>
@@ -132,7 +131,7 @@ const LifecodeEssentials = () => {
       </section>
 
       {/* Panels Grid */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {panels.map((panel) => (
@@ -158,7 +157,7 @@ const LifecodeEssentials = () => {
       </section>
 
       {/* Why Choose Essentials */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="glassmorphism rounded-2xl p-8 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-lifecode-text-primary mb-6 text-center">
