@@ -19,6 +19,14 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Lifecode brand colors
+				'lifecode-primary': '#263974', // deep dark blue
+				'lifecode-text-primary': '#FFFFFF', // white
+				'lifecode-text-secondary': '#273a76', // dark steel blue
+				'lifecode-button': '#d53940', // red for CTAs
+				'lifecode-accent': '#f9a94e', // yellow for icons
+				
+				// Keep existing shadcn colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -63,6 +71,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				'gelion': ['Gelion', 'sans-serif'],
+				'roboto': ['Roboto', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +96,44 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						textShadow: '0 0 5px rgba(249, 169, 78, 0.5)'
+					},
+					'50%': {
+						textShadow: '0 0 20px rgba(249, 169, 78, 0.8), 0 0 30px rgba(249, 169, 78, 0.6)'
+					}
+				},
+				'data-stream': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'glow': 'glow 2s ease-in-out infinite',
+				'data-stream': 'data-stream 3s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			}
 		}
 	},
