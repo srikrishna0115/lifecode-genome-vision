@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Trash2, ShoppingBag, Shield, Clock, Award } from 'lucide-react';
@@ -14,7 +13,7 @@ const Cart = () => {
     return (
       <div className="min-h-screen bg-lifecode-primary">
         <Header />
-        <div className="pt-24 pb-12">
+        <div className="pt-16 pb-12">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto">
               <ShoppingBag className="h-24 w-24 text-lifecode-accent mx-auto mb-8" />
@@ -37,12 +36,11 @@ const Cart = () => {
     <div className="min-h-screen bg-lifecode-primary">
       <Header />
       
-      <div className="pt-24 pb-12">
+      <div className="pt-16 pb-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-lifecode-text-primary mb-8 text-center">Your Cart</h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Cart Items */}
             <div className="lg:col-span-2">
               <div className="space-y-4">
                 {items.map((item) => (
@@ -72,9 +70,7 @@ const Cart = () => {
               </div>
             </div>
 
-            {/* Order Summary & Trust Badges */}
             <div className="space-y-6">
-              {/* Order Summary */}
               <div className="glassmorphism rounded-2xl p-6">
                 <h3 className="text-2xl font-bold text-lifecode-text-primary mb-6">Order Summary</h3>
                 <div className="space-y-4 mb-6">
@@ -98,7 +94,6 @@ const Cart = () => {
                 </Button>
               </div>
 
-              {/* Trust Badges */}
               <div className="glassmorphism rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-lifecode-text-primary mb-4">Why Choose Lifecode?</h3>
                 <div className="space-y-4">

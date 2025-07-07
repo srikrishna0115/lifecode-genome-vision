@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowLeft, CreditCard, Lock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -30,7 +29,7 @@ const Checkout = () => {
     <div className="min-h-screen bg-lifecode-primary">
       <Header />
       
-      <div className="pt-20 pb-12">
+      <div className="pt-16 pb-12">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <Link 
@@ -43,9 +42,7 @@ const Checkout = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Checkout Form */}
             <div className="lg:col-span-2">
-              {/* Progress Steps */}
               <div className="glassmorphism rounded-2xl p-6 mb-8">
                 <div className="flex items-center justify-between">
                   {steps.map((step, index) => (
@@ -76,7 +73,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Form Content */}
               <div className="glassmorphism rounded-2xl p-8">
                 {currentStep === 1 && (
                   <div>
@@ -108,7 +104,6 @@ const Checkout = () => {
                   <div>
                     <h2 className="text-2xl font-bold text-lifecode-text-primary mb-6">Billing & Shipping Address</h2>
                     
-                    {/* Billing Address */}
                     <div className="mb-8">
                       <h3 className="text-lg font-semibold text-lifecode-text-primary mb-4">Billing Address</h3>
                       <div className="space-y-4">
@@ -139,7 +134,6 @@ const Checkout = () => {
                       </div>
                     </div>
 
-                    {/* Use Billing as Shipping Checkbox */}
                     <div className="flex items-center space-x-2 mb-6">
                       <Checkbox 
                         id="useBillingAsShipping" 
@@ -151,7 +145,6 @@ const Checkout = () => {
                       </Label>
                     </div>
 
-                    {/* Shipping Address */}
                     {!useBillingAsShipping && (
                       <div>
                         <h3 className="text-lg font-semibold text-lifecode-text-primary mb-4">Shipping Address</h3>
@@ -234,7 +227,6 @@ const Checkout = () => {
                   </div>
                 )}
 
-                {/* Navigation Buttons */}
                 <div className="flex justify-between mt-8">
                   {currentStep > 1 && (
                     <Button
@@ -263,9 +255,8 @@ const Checkout = () => {
               </div>
             </div>
 
-            {/* Order Summary Sidebar */}
             <div className="space-y-6">
-              <div className="glassmorphism rounded-2xl p-6 sticky top-24">
+              <div className="glassmorphism rounded-2xl p-6 sticky top-20">
                 <h3 className="text-xl font-bold text-lifecode-text-primary mb-4">Order Summary</h3>
                 <div className="space-y-3 mb-6">
                   {items.map((item) => (
@@ -291,7 +282,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Security Badge */}
               <div className="glassmorphism rounded-2xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <Lock className="h-6 w-6 text-lifecode-accent" />

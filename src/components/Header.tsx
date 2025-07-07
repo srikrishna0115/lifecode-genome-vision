@@ -21,14 +21,14 @@ const Header = () => {
 
   return (
     <header className="fixed w-full top-0 z-50 glassmorphism">
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/5fb1a9a0-f152-44e5-8710-444b0143bcb0.png" 
               alt="Lifecode Logo" 
-              style={{ width: '257px', height: 'auto', objectFit: 'unset' }}
+              style={{ width: '200px', height: 'auto', objectFit: 'unset' }}
             />
           </Link>
 
@@ -106,7 +106,7 @@ const Header = () => {
             {/* Buy Now Button */}
             <Button
               onClick={handleBuyNow}
-              className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-6 py-2 rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
+              className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-4 py-2 rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
             >
               BUY NOW
             </Button>
