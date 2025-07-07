@@ -26,9 +26,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/5e3eeb91-044a-455d-a257-58e20498fdf7.png" 
+              src="/lovable-uploads/5fb1a9a0-f152-44e5-8710-444b0143bcb0.png" 
               alt="Lifecode Logo" 
-              className="h-8 w-auto"
+              style={{ width: '257px', height: 'auto', objectFit: 'unset' }}
             />
           </Link>
 

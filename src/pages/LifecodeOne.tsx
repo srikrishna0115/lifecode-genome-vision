@@ -10,15 +10,17 @@ import { toast } from 'sonner';
 const LifecodeOne = () => {
   const { addToCart } = useCart();
 
-  const handleAddToCart = (panel: any) => {
-    addToCart({
-      id: panel.id,
-      name: panel.name,
-      price: panel.price,
-      category: 'Lifecode One',
-      description: panel.description
+  const handleAddAllToCart = () => {
+    panels.forEach(panel => {
+      addToCart({
+        id: panel.id,
+        name: panel.name,
+        price: panel.price,
+        category: 'Lifecode One',
+        description: panel.description
+      });
     });
-    toast.success(`${panel.name} added to cart!`);
+    toast.success('All Lifecode One panels added to cart!');
   };
 
   const panels = [
@@ -85,6 +87,12 @@ const LifecodeOne = () => {
             <p className="text-xl text-lifecode-text-primary/80 mb-8">
               Comprehensive genetic panels for men, women, and children focusing on core health markers and predispositions
             </p>
+            <Button
+              onClick={handleAddAllToCart}
+              className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
+            >
+              BUY NOW - Complete Package
+            </Button>
           </div>
         </div>
       </section>
@@ -106,7 +114,7 @@ const LifecodeOne = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3">
                   {panel.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-lifecode-accent rounded-full mt-2 flex-shrink-0"></div>
@@ -114,13 +122,6 @@ const LifecodeOne = () => {
                     </div>
                   ))}
                 </div>
-
-                <Button
-                  onClick={() => handleAddToCart(panel)}
-                  className="w-full bg-lifecode-button hover:bg-lifecode-button/80 text-white py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
-                >
-                  BUY NOW - ₹{panel.price.toLocaleString()}
-                </Button>
               </div>
             ))}
           </div>

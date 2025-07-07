@@ -17,6 +17,11 @@ const Index = () => {
         <AnimatedBackground />
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/702dd76d-5ef9-442d-9f92-7ce6bf769512.png" 
+              alt="Lifecode Product" 
+              className="mx-auto mb-8 max-w-md w-full h-auto rounded-2xl shadow-2xl"
+            />
             <h1 className="text-5xl md:text-7xl font-bold text-lifecode-text-primary mb-6 animate-fade-in glow-text">
               From Insight to 
               <span className="text-lifecode-accent animate-glow"> Foresight</span>
@@ -24,21 +29,14 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-lifecode-text-primary/80 mb-8 animate-fade-in">
               India's leading personalized genetic testing brand offering comprehensive genetic panels for health optimization and disease prevention
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+            <div className="flex justify-center animate-fade-in">
               <Button 
                 asChild
                 className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
               >
                 <Link to="/lifecode-one">
-                  Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
+                  BUY NOW
                 </Link>
-              </Button>
-              <Button 
-                asChild
-                variant="outline"
-                className="border-lifecode-accent text-lifecode-accent hover:bg-lifecode-accent hover:text-lifecode-primary px-8 py-4 text-lg rounded-lg"
-              >
-                <Link to="/about">Learn More</Link>
               </Button>
             </div>
           </div>

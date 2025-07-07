@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,9 +11,10 @@ const Footer = () => {
           {/* Column 1: Company Info */}
           <div className="space-y-4">
             <img 
-              src="/lovable-uploads/5e3eeb91-044a-455d-a257-58e20498fdf7.png" 
+              src="/lovable-uploads/5fb1a9a0-f152-44e5-8710-444b0143bcb0.png" 
               alt="Lifecode Logo" 
-              className="h-8 w-auto mb-4"
+              className="mb-4"
+              style={{ width: '257px', height: 'auto', objectFit: 'unset' }}
             />
             <h3 className="text-lg font-semibold text-lifecode-text-primary">
               Lifecode Genorex Private Limited
@@ -21,7 +22,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-lifecode-text-primary/80">
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-lifecode-accent mt-1 flex-shrink-0" />
-                <span>Lifecode Clinic, Health & Wellness Center, Mumbai, India</span>
+                <span>Clinic: No.18, 2nd Floor, Gopalapuram 1st St, Gopalapuram, Chennai, 600086.</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-lifecode-accent" />
@@ -44,6 +45,10 @@ const Footer = () => {
                 >
                   www.lifecode.life
                 </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4 text-lifecode-accent" />
+                <span>Chat with us on WhatsApp</span>
               </div>
             </div>
           </div>
@@ -99,13 +104,19 @@ const Footer = () => {
                 href="#" 
                 className="block text-lifecode-text-primary/80 hover:text-lifecode-accent transition-colors"
               >
-                Terms and Conditions
+                Terms and conditions
               </a>
               <a 
                 href="#" 
                 className="block text-lifecode-text-primary/80 hover:text-lifecode-accent transition-colors"
               >
                 Sitemap
+              </a>
+              <a 
+                href="#" 
+                className="block text-lifecode-text-primary/80 hover:text-lifecode-accent transition-colors"
+              >
+                Blog Sitemap
               </a>
             </div>
           </div>
@@ -116,20 +127,6 @@ const Footer = () => {
           <p className="text-sm text-lifecode-text-primary/60 mb-4 md:mb-0">
             © 2024 Lifecode Genorex Private Limited. All rights reserved.
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-lifecode-text-primary/60 hover:text-lifecode-accent transition-colors">
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-lifecode-text-primary/60 hover:text-lifecode-accent transition-colors">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-lifecode-text-primary/60 hover:text-lifecode-accent transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-lifecode-text-primary/60 hover:text-lifecode-accent transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
