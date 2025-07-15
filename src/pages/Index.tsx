@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-lifecode-primary">
+    <div className="min-h-screen bg-lifecode-content-bg">
       <Header />
       
       {/* Hero Section */}
@@ -22,17 +22,17 @@ const Index = () => {
               alt="Lifecode Product" 
               className="mx-auto mb-8 max-w-md w-full h-auto rounded-2xl shadow-2xl"
             />
-            <h1 className="text-5xl md:text-7xl font-bold text-lifecode-text-primary mb-6 animate-fade-in glow-text">
+            <h1 className="text-5xl md:text-7xl font-bold text-lifecode-text-headlines mb-6 animate-fade-in glow-text">
               From Insight to 
               <span className="text-lifecode-accent animate-glow"> Foresight</span>
             </h1>
-            <p className="text-xl md:text-2xl text-lifecode-text-primary/80 mb-8 animate-fade-in">
+            <p className="text-xl md:text-2xl text-lifecode-text-secondary mb-8 animate-fade-in">
               India's leading personalized genetic testing brand offering comprehensive genetic panels for health optimization and disease prevention
             </p>
             <div className="flex justify-center animate-fade-in">
               <Button 
                 asChild
-                className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
+                className="bg-lifecode-button hover:bg-lifecode-button/80 text-lifecode-text-primary px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
               >
                 <Link to="/lifecode-one">
                   BUY NOW
@@ -47,10 +47,10 @@ const Index = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-lifecode-text-primary mb-6 glow-text">
+            <h2 className="text-4xl md:text-5xl font-bold text-lifecode-text-headlines mb-6 glow-text">
               Our Genetic Testing Solutions
             </h2>
-            <p className="text-xl text-lifecode-text-primary/80 max-w-3xl mx-auto">
+            <p className="text-xl text-lifecode-text-secondary max-w-3xl mx-auto">
               Discover your genetic blueprint with our comprehensive testing panels designed for every life stage and health goal
             </p>
           </div>
@@ -67,7 +67,7 @@ const Index = () => {
               </p>
               <Button 
                 asChild
-                className="bg-lifecode-button hover:bg-lifecode-button/80 text-white w-full"
+                className="bg-lifecode-accent hover:bg-lifecode-accent/80 text-white w-full"
               >
                 <Link to="/lifecode-one">
                   Explore Lifecode One <ArrowRight className="ml-2 h-4 w-4" />
@@ -86,7 +86,7 @@ const Index = () => {
               </p>
               <Button 
                 asChild
-                className="bg-lifecode-button hover:bg-lifecode-button/80 text-white w-full"
+                className="bg-lifecode-accent hover:bg-lifecode-accent/80 text-white w-full"
               >
                 <Link to="/lifecode-essentials">
                   Explore Essentials <ArrowRight className="ml-2 h-4 w-4" />
@@ -105,7 +105,7 @@ const Index = () => {
               </p>
               <Button 
                 asChild
-                className="bg-lifecode-button hover:bg-lifecode-button/80 text-white w-full"
+                className="bg-lifecode-accent hover:bg-lifecode-accent/80 text-white w-full"
               >
                 <Link to="/lifecode-enhanced">
                   Explore Enhanced <ArrowRight className="ml-2 h-4 w-4" />
@@ -120,10 +120,10 @@ const Index = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-lifecode-text-primary mb-6 glow-text">
+            <h2 className="text-4xl md:text-5xl font-bold text-lifecode-text-headlines mb-6 glow-text">
               How It Works
             </h2>
-            <p className="text-xl text-lifecode-text-primary/80 max-w-3xl mx-auto">
+            <p className="text-xl text-lifecode-text-secondary max-w-3xl mx-auto">
               Your journey to genetic insights in four simple steps
             </p>
           </div>
@@ -157,12 +157,12 @@ const Index = () => {
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-6 animate-fade-in">
-                    <div className="flex-shrink-0 w-16 h-16 bg-lifecode-accent rounded-full flex items-center justify-center text-lifecode-primary font-bold text-xl">
+                    <div className="flex-shrink-0 w-16 h-16 bg-lifecode-accent rounded-full flex items-center justify-center text-white font-bold text-xl">
                       {item.step}
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-2xl font-bold text-lifecode-text-primary mb-2">{item.title}</h3>
-                      <p className="text-lifecode-text-primary/80 text-lg">{item.description}</p>
+                      <h3 className="text-2xl font-bold text-lifecode-text-headlines mb-2">{item.title}</h3>
+                      <p className="text-lifecode-text-secondary text-lg">{item.description}</p>
                     </div>
                   </div>
                 ))}

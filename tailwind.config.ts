@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,12 +20,16 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Lifecode brand colors
-				'lifecode-primary': '#263974', // deep dark blue
-				'lifecode-text-primary': '#FFFFFF', // white
-				'lifecode-text-secondary': '#273a76', // dark steel blue
-				'lifecode-button': '#d53940', // red for CTAs
-				'lifecode-accent': '#f9a94e', // yellow for icons
+				// Updated Lifecode brand colors - White content with blue frame
+				'lifecode-primary': '#233A7A', // main dark blue for header, footer, cards
+				'lifecode-content-bg': '#FFFFFF', // white content background
+				'lifecode-text-primary': '#FFFFFF', // white text on blue elements
+				'lifecode-text-secondary': '#273a76', // dark blue text on white background
+				'lifecode-text-headlines': '#233A7A', // dark blue for headlines on white
+				'lifecode-button': '#233A7A', // primary CTA button (blue)
+				'lifecode-accent': '#eda342', // orange for secondary actions
+				'lifecode-border': 'rgba(35, 58, 122, 0.15)', // semi-transparent blue borders
+				'lifecode-glow': 'rgba(249, 169, 78, 0.5)', // orange glow effect
 				
 				// Keep existing shadcn colors
 				border: 'hsl(var(--border))',

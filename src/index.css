@@ -41,11 +41,11 @@
   }
 
   body {
-    @apply bg-lifecode-primary text-lifecode-text-primary font-roboto;
+    @apply bg-lifecode-content-bg text-lifecode-text-secondary font-roboto;
   }
 
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.05);
+    background: #233A7A;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -58,7 +58,7 @@
     position: absolute;
     width: 2px;
     height: 2px;
-    background: #f9a94e;
+    background: #eda342;
     border-radius: 50%;
     animation: data-stream 3s linear infinite;
   }

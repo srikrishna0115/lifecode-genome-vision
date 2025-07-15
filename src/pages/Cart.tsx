@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Trash2, ShoppingBag, Shield, Clock, Award } from 'lucide-react';
@@ -11,17 +12,17 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-lifecode-primary">
+      <div className="min-h-screen bg-lifecode-content-bg">
         <Header />
-        <div className="pt-16 pb-12">
+        <div className="pt-20 pb-12">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto">
               <ShoppingBag className="h-24 w-24 text-lifecode-accent mx-auto mb-8" />
-              <h1 className="text-4xl font-bold text-lifecode-text-primary mb-6">Your Cart is Empty</h1>
-              <p className="text-xl text-lifecode-text-primary/80 mb-8">
+              <h1 className="text-4xl font-bold text-lifecode-text-headlines mb-6">Your Cart is Empty</h1>
+              <p className="text-xl text-lifecode-text-secondary mb-8">
                 Discover our genetic testing panels to start your journey towards better health
               </p>
-              <Button asChild className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-3">
+              <Button asChild className="bg-lifecode-button hover:bg-lifecode-button/80 text-lifecode-text-primary px-8 py-3">
                 <Link to="/lifecode-one">Browse Products</Link>
               </Button>
             </div>
@@ -33,12 +34,12 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-lifecode-primary">
+    <div className="min-h-screen bg-lifecode-content-bg">
       <Header />
       
-      <div className="pt-16 pb-12">
+      <div className="pt-20 pb-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-lifecode-text-primary mb-8 text-center">Your Cart</h1>
+          <h1 className="text-4xl font-bold text-lifecode-text-headlines mb-8 text-center">Your Cart</h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
@@ -89,7 +90,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <Button asChild className="w-full bg-lifecode-button hover:bg-lifecode-button/80 text-white py-3">
+                <Button asChild className="w-full bg-lifecode-button hover:bg-lifecode-button/80 text-lifecode-text-primary py-3">
                   <Link to="/checkout">Proceed to Checkout</Link>
                 </Button>
               </div>

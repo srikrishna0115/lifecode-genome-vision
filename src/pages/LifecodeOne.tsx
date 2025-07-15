@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Heart, Activity } from 'lucide-react';
 import Header from '@/components/Header';
@@ -66,11 +67,11 @@ const LifecodeOne = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-lifecode-primary">
+    <div className="min-h-screen bg-lifecode-content-bg">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-16 pb-12 relative">
+      <section className="pt-20 pb-12 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <img 
@@ -78,15 +79,15 @@ const LifecodeOne = () => {
               alt="Lifecode One Product" 
               className="mx-auto mb-8 max-w-md w-full h-auto rounded-2xl shadow-2xl"
             />
-            <h1 className="text-4xl md:text-6xl font-bold text-lifecode-text-primary mb-6 glow-text">
+            <h1 className="text-4xl md:text-6xl font-bold text-lifecode-text-headlines mb-6 glow-text">
               Lifecode One
             </h1>
-            <p className="text-xl text-lifecode-text-primary/80 mb-8">
+            <p className="text-xl text-lifecode-text-secondary mb-8">
               Comprehensive genetic panels for men, women, and children focusing on core health markers and predispositions
             </p>
             <Button
               onClick={handleAddCompletePackage}
-              className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
+              className="bg-lifecode-button hover:bg-lifecode-button/80 text-lifecode-text-primary px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
             >
               BUY NOW
             </Button>

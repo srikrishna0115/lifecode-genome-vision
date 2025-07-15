@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Phone, ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
@@ -19,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 glassmorphism">
+    <header className="fixed w-full top-0 z-50 bg-lifecode-primary border-b border-white/10">
       <div className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -96,7 +97,7 @@ const Header = () => {
             >
               <ShoppingCart className="h-5 w-5" />
               {getItemCount() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-lifecode-button text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-lifecode-accent text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                   {getItemCount()}
                 </span>
               )}
@@ -105,7 +106,7 @@ const Header = () => {
             {/* Buy Now Button */}
             <Button
               onClick={handleBuyNow}
-              className="bg-lifecode-button hover:bg-lifecode-button/80 text-white px-3 py-1 text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-button/25"
+              className="bg-lifecode-accent hover:bg-lifecode-accent/80 text-white px-3 py-1 text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-lifecode-accent/25"
             >
               BUY NOW
             </Button>
@@ -122,7 +123,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-2 glassmorphism rounded-lg p-3 space-y-3">
+          <div className="lg:hidden mt-2 bg-lifecode-primary/95 backdrop-blur-xl border border-white/20 rounded-lg p-3 space-y-3">
             <Link 
               to="/about" 
               className="block text-lifecode-text-primary hover:text-lifecode-accent transition-colors"
