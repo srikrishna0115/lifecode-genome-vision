@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, Clock, Award } from 'lucide-react';
 import Header from '@/components/Header';
@@ -89,7 +90,7 @@ const StandardHealthMen = () => {
     {
       icon: Shield,
       title: 'Expert Analysis',
-      description: 'Analyzed by certified genetic counselors and medical professionals'
+      description: 'Generic counsellors, nutritional genomist available for guidance'
     },
     {
       icon: Clock,
