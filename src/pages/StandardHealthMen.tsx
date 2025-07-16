@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Shield, Clock, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,7 +8,6 @@ import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 
 const StandardHealthMen = () => {
-  const [showStickyBar, setShowStickyBar] = useState(false);
   const { addToCart } = useCart();
 
   const panelData = {
@@ -110,25 +109,12 @@ const StandardHealthMen = () => {
     toast.success(`${panelData.name} added to cart!`);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById('hero-section');
-      if (heroSection) {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        setShowStickyBar(window.scrollY > heroBottom);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="min-h-screen bg-lifecode-content-bg">
       <Header />
       
       {/* Hero Section */}
-      <section id="hero-section" className="pt-24 pb-12">
+      <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             {/* Image Placeholder */}
@@ -182,50 +168,40 @@ const StandardHealthMen = () => {
         </div>
       </section>
 
-      {/* Why Choose This Panel Section */}
-      <section className="py-12 bg-lifecode-primary">
+      {/* Why Choose This Panel Section - Updated with White Background */}
+      <section className="py-12 bg-lifecode-content-bg">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-gelion font-bold text-lifecode-text-primary mb-12 text-center">
+          <h2 className="text-3xl font-gelion font-bold text-lifecode-text-headlines mb-12 text-center">
             Why Choose This Panel?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
             {whyChooseFeatures.map((feature, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-lifecode-accent rounded-full mx-auto mb-4 flex items-center justify-center">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-roboto font-bold text-xl text-lifecode-text-primary mb-3">
+                <h3 className="font-roboto font-bold text-xl text-lifecode-text-headlines mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-lifecode-text-primary font-roboto">
+                <p className="text-lifecode-text-secondary font-roboto">
                   {feature.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Sticky CTA Bar */}
-      {showStickyBar && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-lifecode-border z-50 transition-transform duration-300">
-          <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-roboto font-medium text-lifecode-text-headlines">{panelData.name}</h3>
-                <p className="text-lifecode-text-secondary">₹{panelData.price.toLocaleString()}</p>
-              </div>
-              <Button
-                onClick={handleAddToCart}
-                className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg"
-              >
-                Add to Cart
-              </Button>
-            </div>
+          
+          {/* New centered Add to Cart button */}
+          <div className="text-center">
+            <Button
+              onClick={handleAddToCart}
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg rounded-lg transition-all hover:shadow-lg"
+            >
+              Add to Cart
+            </Button>
           </div>
         </div>
-      )}
+      </section>
 
       <Footer />
     </div>
