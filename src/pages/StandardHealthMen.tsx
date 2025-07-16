@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Shield, Clock, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -7,7 +8,6 @@ import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 
 const StandardHealthMen = () => {
-  const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const { addToCart } = useCart();
 
@@ -87,13 +87,27 @@ const StandardHealthMen = () => {
     }
   ];
 
+  const whyChooseFeatures = [
+    {
+      icon: Shield,
+      title: 'Expert Analysis',
+      description: 'Analyzed by certified genetic counselors and medical professionals'
+    },
+    {
+      icon: Clock,
+      title: 'Accurate Results',
+      description: '99.9% accuracy with latest genetic testing technology'
+    },
+    {
+      icon: Award,
+      title: 'Actionable Insights',
+      description: 'Clear recommendations you can implement immediately'
+    }
+  ];
+
   const handleAddToCart = () => {
     addToCart(panelData);
     toast.success(`${panelData.name} added to cart!`);
-  };
-
-  const toggleAccordion = (id: string) => {
-    setActiveAccordion(activeAccordion === id ? null : id);
   };
 
   useEffect(() => {
@@ -141,39 +155,52 @@ const StandardHealthMen = () => {
         </div>
       </section>
 
-      {/* Detailed Panel Breakdown */}
+      {/* Detailed Panel Breakdown - Card Layout */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-gelion font-bold text-lifecode-text-headlines mb-8 text-center">
             Genetic Markers Analyzed in this Panel
           </h2>
           
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {geneticMarkers.map((category) => (
-              <div key={category.id} className="border border-lifecode-border rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleAccordion(category.id)}
-                  className="w-full px-6 py-4 bg-lifecode-primary text-lifecode-text-primary flex items-center justify-between hover:bg-lifecode-primary/90 transition-colors"
-                >
-                  <span className="font-roboto font-medium text-left">{category.title}</span>
-                  {activeAccordion === category.id ? (
-                    <ChevronUp className="h-5 w-5" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5" />
-                  )}
-                </button>
-                {activeAccordion === category.id && (
-                  <div className="px-6 py-4 bg-lifecode-primary/5">
-                    <ul className="space-y-2">
-                      {category.items.map((item, index) => (
-                        <li key={index} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-lifecode-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-lifecode-text-secondary font-roboto">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              <div key={category.id} className="bg-lifecode-primary rounded-lg p-6">
+                <h3 className="font-roboto font-bold text-lg text-lifecode-text-primary mb-4">
+                  {category.title}
+                </h3>
+                <ul className="space-y-2">
+                  {category.items.map((item, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-lifecode-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-lifecode-text-primary font-roboto text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose This Panel Section */}
+      <section className="py-12 bg-lifecode-primary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-gelion font-bold text-lifecode-text-primary mb-12 text-center">
+            Why Choose This Panel?
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {whyChooseFeatures.map((feature, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-lifecode-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <feature.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-roboto font-bold text-xl text-lifecode-text-primary mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-lifecode-text-primary font-roboto">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
