@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Clock, Award } from 'lucide-react';
 import Header from '@/components/Header';
@@ -113,30 +112,24 @@ const StandardHealthMen = () => {
     <div className="min-h-screen bg-lifecode-content-bg">
       <Header />
       
-      {/* Hero Section */}
+      {/* Hero Section - Restructured to Single Column */}
       <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Image Placeholder */}
-            <div className="w-full max-w-md mx-auto mb-8 h-64 bg-lifecode-primary/10 rounded-2xl flex items-center justify-center">
-              <span className="text-lifecode-text-secondary/50">Product Image Placeholder</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-gelion font-bold text-lifecode-text-headlines mb-6">
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl font-gelion font-bold text-lifecode-text-headlines mb-8">
               {panelData.name}
             </h1>
-            <p className="text-xl text-lifecode-text-secondary mb-8 font-roboto">
+            
+            {/* Image Placeholder */}
+            <div className="w-full max-w-2xl h-80 mx-auto mb-8 bg-gray-100 rounded-lg flex items-center justify-center">
+              <span className="text-lifecode-text-secondary/50 text-lg">Product Image Placeholder</span>
+            </div>
+            
+            {/* Description */}
+            <p className="text-xl text-lifecode-text-secondary font-roboto">
               {panelData.description}
             </p>
-            <div className="text-4xl font-bold text-lifecode-text-headlines mb-8">
-              ₹{panelData.price.toLocaleString()}
-            </div>
-            <Button
-              onClick={handleAddToCart}
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg rounded-lg transition-all hover:shadow-lg"
-            >
-              Add to Cart
-            </Button>
           </div>
         </div>
       </section>
@@ -168,7 +161,7 @@ const StandardHealthMen = () => {
         </div>
       </section>
 
-      {/* Why Choose This Panel Section - Updated with White Background */}
+      {/* Why Choose This Panel Section - White Background with Single Add to Cart Button */}
       <section className="py-12 bg-lifecode-content-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-gelion font-bold text-lifecode-text-headlines mb-12 text-center">
@@ -191,7 +184,7 @@ const StandardHealthMen = () => {
             ))}
           </div>
           
-          {/* New centered Add to Cart button */}
+          {/* Single centered Add to Cart button */}
           <div className="text-center">
             <Button
               onClick={handleAddToCart}
