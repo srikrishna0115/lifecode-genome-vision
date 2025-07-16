@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import Header from '@/components/Header';
@@ -16,6 +15,7 @@ const StandardHealthMen = () => {
     id: 'standard-health-men',
     name: 'Standard Health Men',
     price: 35000,
+    category: 'Genetic Testing Panel',
     description: 'A comprehensive genetic panel designed for men, focusing on preventative health, disease susceptibility, and key wellness markers to provide a complete picture of your genetic predispositions.'
   };
 
