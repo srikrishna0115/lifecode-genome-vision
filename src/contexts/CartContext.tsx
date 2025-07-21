@@ -7,12 +7,17 @@ export interface CartItem {
   price: number;
   category: string;
   description?: string;
+  recipientType?: 'me' | 'gift';
+  giftLabel?: string;
+  recipientGender?: 'male' | 'female' | 'other' | '';
+  selectedPanel?: string;
 }
 
 interface CartContextType {
   items: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: string) => void;
+  updateCartItem: (id: string, updates: Partial<CartItem>) => void;
   clearCart: () => void;
   getItemCount: () => number;
   getTotalPrice: () => number;
@@ -45,6 +50,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setItems(prev => prev.filter(item => item.id !== id));
   };
 
+  const updateCartItem = (id: string, updates: Partial<CartItem>) => {
+    setItems(prev => prev.map(item => 
+      item.id === id ? { ...item, ...updates } : item
+    ));
+  };
+
   const clearCart = () => {
     setItems([]);
   };
@@ -58,6 +69,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       items,
       addToCart,
       removeFromCart,
+      updateCartItem,
       clearCart,
       getItemCount,
       getTotalPrice
